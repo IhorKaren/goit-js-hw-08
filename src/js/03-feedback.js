@@ -37,7 +37,10 @@ function onInputFormValue() {
 
 function populateFormInput() {
   const savedText = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (savedText) {
+
+  formData[savedText.email, savedText.message]
+
+  if (formData) {
     emailInput.value = savedText.email;
     messageInput.value = savedText.message;
   }
