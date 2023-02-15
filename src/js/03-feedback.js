@@ -8,10 +8,13 @@ const emailInput = form.querySelector('input[name="email"]');
 const messageInput = form.querySelector('textarea[name="message"]');
 
 form.addEventListener('submit', onFormSubmit);
-form.addEventListener('input', throttle(e => {
+form.addEventListener(
+  'input',
+  throttle(e => {
     formData[e.target.name] = e.target.value;
     onInputFormValue();
-  }, 500));
+  }, 500)
+);
 
 populateFormInput();
 
@@ -33,8 +36,8 @@ function onFormSubmit(event) {
 }
 
 function onInputFormValue() {
-    const inputValue = JSON.stringify(formData)
- localStorage.setItem(STORAGE_KEY, inputValue);
+  const inputValue = JSON.stringify(formData);
+  localStorage.setItem(STORAGE_KEY, inputValue);
 }
 
 function populateFormInput() {
