@@ -16,14 +16,14 @@ form.addEventListener(
 
 populateFormInput();
 
-function onFormSubmit(event) {
-  event.preventDefault();
+function onFormSubmit(e) {
+  e.preventDefault();
 
   console.log(formData);
 
-  event.currentTarget.reset();
+  e.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
-  Object.keys(formData).forEach(e => delete formData[e]);
+  Object.keys(formData).forEach(el => delete formData[el]);
 }
 
 function onInputFormValue() {
